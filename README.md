@@ -1,22 +1,23 @@
-Proyecto_genomica_Penaeus vannamei  SRX10866775: 16S rRNA of gut microbiota
-1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads
-
-
-Design: the library was sequenced on an Illumina NovaSeq platform and 250 bp paired-end reads were generated.
-Submitted by: Guangdong Ocean University
-Study: Pacific white shrimp 16S rDNA
-PRJNA729583 • SRP319658 • All experiments • All runs
-show Abstract
-Sample:
-SAMN19136062 • SRS8961620 • All experiments • All runs
-Organism: Penaeus vannamei
-Library:
-Name: BSF20-3
-Instrument: Illumina NovaSeq 6000
-Strategy: AMPLICON
-Source: GENOMIC
-Selection: PCR
-Layout: PAIRED
-Runs: 1 run, 133,094 spots, 64.9M bases, 23.2Mb
-Run	# of Spots	# of Bases	Size	Published
-SRR14521329	133,094	64.9M	23.2Mb	2021-05-15
+# Título: Práctica elaboración de un proyecto de genómica aplicada.
+## Autor: Cristóbal Domínguez, Ecuador, Biólogo Marino.
+### Descripción: Proyecto_genomica_Penaeus vannamei
+### https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei
+**Assembly_ASM378908v1**
+## Organism: Penaeus vannamei (Pacific white shrimp)
+## Infraspecific name: Breed: Kehai No.1
+## Sex: male
+## Submitter: Institute of Oceanology, Chinese Academy of Sciences
+## Date: 2018/11/16
+## Assembly level: Scaffold
+## Genome representation: full
+## RefSeq category: representative genome
+## GenBank assembly accession: GCA_003789085.1 (latest)
+## RefSeq assembly accession: GCF_003789085.1 (latest)
+## IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]
+## SRX10866775: 16S rRNA of gut microbiota
+## 1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads
+## WGS Project: QCYY01Assembly 
+## method: WTDBG v. 1.2Expected final version: yes
+## Genome coverage: 84.0x
+## Sequencing technology: PacBio; Illumina HiSeq
+## IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]
