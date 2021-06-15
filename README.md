@@ -36,3 +36,11 @@
 |Contig L50|	5,435|
 |Total number of chromosomes and plasmids|	1|
 |Number of component sequences (WGS or clone)|	4,683|
+
+
+Penaeus_vannamei_AR100_annotation_report.xml              2019-06-24 13:08  123K  
+README.txt                                                2020-09-02 16:26   43K  
+README_Penaeus_vannamei_annotation_release_100            2019-06-24 13:08  760   
+annotation_hashes.txt                                     2019-06-24 13:09  410   
+assembly_status.txt                                       2021-06-14 08:26   14   
+md5checksums.txt            
