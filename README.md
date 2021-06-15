@@ -21,3 +21,18 @@
 ### Genome coverage: 84.0x
 ### Sequencing technology: PacBio; Illumina HiSeq
 ### IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]
+
+## Global statistics
+|Columna 1|Columna 2|
+|---------|---------|
+|Total sequence length| 1,663,581,301|
+|Total ungapped length|	1,618,053,608|
+|Gaps between scaffolds|	0|
+|Number of scaffolds|	4,683|
+|Scaffold N50|	605,555|
+|Scaffold L50|	892|
+|Number of contigs|	33,020|
+|Contig N50|	86,864|
+|Contig L50|	5,435|
+|Total number of chromosomes and plasmids|	1|
+|Number of component sequences (WGS or clone)|	4,683|
