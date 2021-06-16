@@ -1,7 +1,7 @@
 # Título: Práctica elaboración de un proyecto de genómica aplicada.
 ## Autor: Cristóbal Domínguez, Ecuador, Biólogo Marino.
 ### Descripción: Proyecto_genomica_Penaeus vannamei
-### https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei
+### <https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei
 **Assembly_ASM378908v1**
 ## Organism: ***Penaeus vannamei*** (Pacific white shrimp)
 ### Infraspecific name: Breed: Kehai No.1
@@ -37,10 +37,35 @@
 |Total number of chromosomes and plasmids|	1|
 |Number of component sequences (WGS or clone)|	4,683|
 
+# BIOPROYECTO
+### <https://www.ncbi.nlm.nih.gov/sra?term=SRP319658
+## SRX10866775: 16S rRNA of gut microbiota
+### 1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads
+### Submitted by: Guangdong Ocean University
+### Study: Pacific white shrimp 16S rDNA
+### PRJNA729583 • SRP319658 • All experiments • All runs
+### Sample: SAMN19136062 • SRS8961620 • All experiments • All runs
+### Source: GENOMIC
+### Selection: PCR
+### Layout: PAIRED 
 
-Penaeus_vannamei_AR100_annotation_report.xml              2019-06-24 13:08  123K  
-README.txt                                                2020-09-02 16:26   43K  
-README_Penaeus_vannamei_annotation_release_100            2019-06-24 13:08  760   
-annotation_hashes.txt                                     2019-06-24 13:09  410   
-assembly_status.txt                                       2021-06-14 08:26   14   
-md5checksums.txt            
+## Runs: 1 run, 133,094 spots, 64.9M bases, 23.2Mb
+|Columna 1|Columna 2|Columna 3|Columna 4|Columna 5|
+|---------|---------|---------|---------|---------|
+|Run|	# of Spots|	# of Bases|	Size	Published|
+|SRR14521329|	133,094| 64.9M|	23.2Mb|	2021-05-15|
+
+## **Numero de muestra del Bioproyecto_PRJNA729583**
+### <https://www.ncbi.nlm.nih.gov/sra/SRX10866775[accn]
+1. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads Accession: SRX10866775
+2. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 120,032 spots, 58.6M bases, 21.1Mb downloads Accession: SRX10866774
+3. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 135,905 spots, 66.3M bases, 24Mb downloads Accession: SRX10866773
+4. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 132,358 spots, 64.6M bases, 23.1Mb downloads Accession: SRX10866772
+5. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 125,539 spots, 61.3M bases, 21.9Mb downloads Accession: SRX10866771
+6. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 126,824 spots, 61.9M bases, 22.1Mb downloads Accession: SRX10866770
+7. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 130,716 spots, 63.8M bases, 22.7Mb downloads Accession: SRX10866769
+8. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 124,443 spots, 60.7M bases, 21.8Mb downloads Accession: SRX10866768
+9. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 126,887 spots, 61.9M bases, 22.4Mb downloads Accession: SRX10866767
+
+# Metadata
+[SraRunTable.txt](https://github.com/GenomicsEducation/Cristobal/files/6663430/SraRunTable.txt)
