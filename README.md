@@ -192,8 +192,7 @@ rm -r tesis`
 |---------|---------|
 |Configurar|conda config --add channels bioconda|
 |buscar software en bioconda|conda search -c bioconda fast-qc , conda search -c bioconda fastqc , conda search -c bioconda trimmomatic|
-|Instalar|	0|
-|Number of scaffolds|	conda install -c bioconda fastqc, conda install -c bioconda trimmomatic|  
+|Instalar|conda install -c bioconda fastqc, conda install -c bioconda trimmomatic|
 
 ![Configurar_bioconda](https://user-images.githubusercontent.com/84527758/125762234-140067e2-8a8a-45fe-bb1c-382a3fce9729.jpg)
 
@@ -202,10 +201,29 @@ rm -r tesis`
 ![Instalar_bioconda_trimmomatic](https://user-images.githubusercontent.com/84527758/125762307-6cabe391-e14f-4766-a070-6a0292dae379.jpg)
 
 **Crear directorio SRA_samples
+
 ![Creación de directorio_SRA samples](https://user-images.githubusercontent.com/84527758/125762494-872ac0c8-3a4a-4cde-b0ad-a1cbeafda880.jpg)  
 
-**Crear un script 
+**Crear un script   
+
 ![Creación de script_nano_SRA samples__](https://user-images.githubusercontent.com/84527758/125763316-f93ae60a-2a2f-476b-a319-5ce197adaf62.jpg)
+
+
+# Practica_12
+
+
+# Practica_13
+
+
+# Practica_14_Introduccion a los estudios de asociación genómica  
+
+### Objetivo  
+
+-Realizar un análisis de asociación genómico usando datos simulados de genotipos y fenotipos
+
+
+
+
 
 
 
