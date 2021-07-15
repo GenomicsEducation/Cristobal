@@ -78,6 +78,7 @@
   
 # Práctica_9_introducción a Linux para genomica 
 **Instalación y configuración de software**
+### Ventajas de usar Shell: conectividad y acceso remoto: El uso de Shell facilita la conectividad y el acceso remoto a recursos computacionales desde cualquier parte del mundo.
 -PuTTy
 Link de descarga <https://www.putty.org/  
 -WinSCP
@@ -173,9 +174,38 @@ rm -r tesis`
 -Cerrar la sesión  
 `exit`    
     
-# Practica_10_Analisis de secuenciación
+# Practica_10 y 11_Analisis de secuenciación y control de calidad, filtrado y poda
 ## Objetivo: 
 1. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc
 2. Filtrar y podar las secuencias con el software trimmomatic
+3. Realizar el alineamiento de una muestra en formato .fastq a un genoma de referencia  
+4. 
 ### Actividades 
-**Conectar con el servidor POMEO
+-Conectar con el servidor POMEO
+![Putty_](https://user-images.githubusercontent.com/84527758/125758630-682f4194-9fe2-4a7d-b1dd-915464933981.jpg)  
+
+### instalación y configuración software
+
+**Bioconda  
+
+|Acción|Comando|
+|---------|---------|
+|Configurar|conda config --add channels bioconda|
+|buscar software en bioconda|conda search -c bioconda fast-qc , conda search -c bioconda fastqc , conda search -c bioconda trimmomatic|
+|Instalar|	0|
+|Number of scaffolds|	conda install -c bioconda fastqc, conda install -c bioconda trimmomatic|  
+
+![Configurar_bioconda](https://user-images.githubusercontent.com/84527758/125762234-140067e2-8a8a-45fe-bb1c-382a3fce9729.jpg)
+
+![Instalar_bioconda](https://user-images.githubusercontent.com/84527758/125762168-a940cb2b-12e7-44c0-892a-f37c8a886a4c.jpg)
+
+![Instalar_bioconda_trimmomatic](https://user-images.githubusercontent.com/84527758/125762307-6cabe391-e14f-4766-a070-6a0292dae379.jpg)
+
+**Crear directorio SRA_samples
+![Creación de directorio_SRA samples](https://user-images.githubusercontent.com/84527758/125762494-872ac0c8-3a4a-4cde-b0ad-a1cbeafda880.jpg)  
+
+**Crear un script 
+![Creación de script_nano_SRA samples__](https://user-images.githubusercontent.com/84527758/125763316-f93ae60a-2a2f-476b-a319-5ce197adaf62.jpg)
+
+
+
