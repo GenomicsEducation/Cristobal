@@ -226,7 +226,10 @@ rm -r tesis`
 ![Ingreso_proyecto_Rstudio_Cloud](https://user-images.githubusercontent.com/84527758/125776010-b5dbc4ba-1989-4151-8c2a-fb52b798d75f.jpg)
 
 ### Detalles de la practica en Rstudio.cloud
-**Documento htm[Practica_14_CD.pdf](https://github.com/GenomicsEducation/Cristobal/files/6822769/Practica_14_CD.pdf)
+
+**Documento pdf  
+
+[Practica_14_CD.pdf](https://github.com/GenomicsEducation/Cristobal/files/6822769/Practica_14_CD.pdf)
 
 
 
