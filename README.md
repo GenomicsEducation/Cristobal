@@ -212,6 +212,7 @@ rm -r tesis`
 # Practica_12
 
 
+
 # Practica_13
 
 
@@ -227,7 +228,54 @@ rm -r tesis`
 
 ### Detalles de la practica en Rstudio.cloud
 
-**Documento pdf  
+**Importa datos geno y pheno
+-geno <- read.delim("geno.txt", sep = "\t", dec = ",", header = T)
+-pheno <- read.delim("pheno.txt", sep = "\t", dec = ",", header = T)
+
+### Elaboración de histograma
+`head(pheno)`
+`hist(pheno$y)`
+
+**Figura_histograma_fenotipo
+![histograma_feno](https://user-images.githubusercontent.com/84527758/125791820-a19595b3-96dd-47dc-a947-317cdbffb410.jpg)
+
+**Figura_histograma_A
+![histograma_A](https://user-images.githubusercontent.com/84527758/125792123-83913d5a-25fb-4ddb-82e6-ab8cac2cc360.jpg)
+
+**Figura_histograma de endogamia
+`endogamia <- diag(A)`
+`hist(endogamia, main = "Histograma de endogamia")`  
+
+![histograma_geno](https://user-images.githubusercontent.com/84527758/125792204-6792f384-5955-49e1-a6d3-c582ef4079d2.jpg)
+
+**Efecto de los QTLs detectados por el GWAS
+`score <- GWAS(pheno,geno, plot=TRUE)`
+
+![Cromosoma](https://user-images.githubusercontent.com/84527758/125793686-747240fb-a9a7-431f-a9e8-8042b72df8a2.jpg)
+
+
+**Gráfico de regresión lineal  
+`t_geno_300 <- t(geno[300,4:203])+1`
+`t_geno_1000 <- t(geno[1000,4:203])+1`
+`qtl <- data.frame(t_geno_300,t_geno_1000,pheno$y)`
+`qtl.1 <- ggplot(qtl, aes(x = X300, y = pheno.y))`
+`qtl.1 + geom_point() + xlab("snp 300") +  ylab("Pheno")+ geom_smooth(method=lm)`
+`geom_smooth()` using formula 'y ~ x'
+
+** Grafico de regresión   
+
+![snp_300](https://user-images.githubusercontent.com/84527758/125792847-89b1148b-d885-4f4c-8e2d-7c432a41316f.jpg)
+
+`qtl.2 <- ggplot(qtl, aes(x = X1000, y = pheno.y))`
+`qtl.2 + geom_point() + xlab("snp 1000") +  ylab("Pheno")+ geom_smooth(method=lm)`  
+ `geom_smooth()` using formula 'y ~ x'
+
+** Grafico de regresión
+![nsp_1000](https://user-images.githubusercontent.com/84527758/125792796-ef47a26b-0bd4-4dee-b1e0-a093a92bfdb0.jpg)
+
+
+head(qtl)
+**Practica completa_Documento pdf  
 
 [Practica_14_CD.pdf](https://github.com/GenomicsEducation/Cristobal/files/6822769/Practica_14_CD.pdf)
 
