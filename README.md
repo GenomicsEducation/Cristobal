@@ -76,7 +76,7 @@
 ![Proyecto_git_Rstudio](https://user-images.githubusercontent.com/84527758/125744304-323664d1-6ef1-48ff-9cfd-bf53dd13e3c1.jpg)
   
   
-# Tarea 9
+# Práctica_9_introducción a Linux para genomica 
 **Instalación y configuración de software**
 -PuTTy
 Link de descarga <https://www.putty.org/  
@@ -96,7 +96,7 @@ Link: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash
 ![configuración_conda](https://user-images.githubusercontent.com/84527758/125747317-81ccb096-a298-4ead-b1c0-9671ee9594b4.jpg)
 ## Exploración de paquetes instalados
 ![Revisión de paquetes instalado_miniconda](https://user-images.githubusercontent.com/84527758/125750602-a2f6428f-9dfd-4a75-8eeb-052e0deca409.jpg)
-## Creación de cript con nano
+## Creación de script con nano
 ![creación de cript](https://user-images.githubusercontent.com/84527758/125747612-0e8cb0f3-f659-4f33-a72a-10b112b11bdb.jpg)
 ## Instalación de SRA Toolkit  
 ![Instalar_sratoolkit](https://user-images.githubusercontent.com/84527758/125747863-3d063ed3-3e1a-487a-8d55-a7c25ebab148.jpg)
@@ -157,4 +157,11 @@ rm -r tesis`
 -Borrar la palabra inmediatamente detras del cursor  
 `ctrl-w`  
 -Cerrar la sesión  
-`exit`  
+`exit`    
+    
+# Practica_10_Analisis de secuenciación
+## Objetivo: 
+1. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc
+2. Filtrar y podar las secuencias con el software trimmomatic
+### Actividades 
+**Conectar con el servidor POMEO
