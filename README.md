@@ -232,6 +232,13 @@ rm -r tesis`
 -geno <- read.delim("geno.txt", sep = "\t", dec = ",", header = T)  
 -pheno <- read.delim("pheno.txt", sep = "\t", dec = ",", header = T)  
 
+
+### ¿Cómo están codificados los genotipos de cada SNP?
+-Los genotipos están codificados como (-1, 0 y 1). Dónde (-1, 0 y 1) hace referencia al homocigoto del alelo menor, heterocigoto, homocigoto del alelo mayor, respectivamente.
+
+### ¿Observa heterocigotos?
+-Si se evidencia heterocigotos en los tres individuos analizados. Sin embargo, el individuo 2 es el organismo con mayor heterocigotos
+
 ### Elaboración de histograma
 `head(pheno)`  
 `hist(pheno$y)`  
@@ -253,6 +260,17 @@ rm -r tesis`
 
 ![Cromosoma](https://user-images.githubusercontent.com/84527758/125793686-747240fb-a9a7-431f-a9e8-8042b72df8a2.jpg)
 
+### ¿Cuál es el nivel de endogamia promedio de esta población?  
+-El nivel de endogamia promedio de esta población es de (1), debido a que claramente ilustra el histograma que los valores fluctúan aproximadamente de 0.75 a 1.25
+
+### ¿Que significa un valor de endogamia de 1.1?  
+-El valor de (1.1) nos indica una mayor probabilidad del (10%) de incremento de endogamia en la población respecto al promedio de la población.  
+
+### ¿Que representa un valor de endogamia de 0.90?  
+El valor de (0.9) nos indica una menor probabilidad del (10%) en reducir la endogamia en la población respecto al promedio de la población.  
+
+## Visualmente: ¿Cuantos QTLs fueron detectados por el análisis GWAS? ¿En qué cromosomas se encuentran?  
+Visualmente se observan varios QTLs. Sin embargo solo dos fueron muy marcado, que sobrepasan la linea punteada, uno en el cromosoma 3 y otro en el cromosoma 10.
 
 **Gráfico de regresión lineal  
 `t_geno_300 <- t(geno[300,4:203])+1`  
@@ -261,6 +279,9 @@ rm -r tesis`
 `qtl.1 <- ggplot(qtl, aes(x = X300, y = pheno.y))`  
 `qtl.1 + geom_point() + xlab("snp 300") +  ylab("Pheno")+ geom_smooth(method=lm)`  
 `geom_smooth()` using formula 'y ~ x'  
+
+### ¿Qué SNP fueron significativos?  
+-Se identificaron dos QTLs significativos (snp300) y (snp1000), tal como se visualizó en el gráfico obtenido en el análisis GWAS.
 
 ** Grafico de regresión   
 
