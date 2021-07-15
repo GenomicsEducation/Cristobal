@@ -81,37 +81,51 @@
 -PuTTy
 Link de descarga <https://www.putty.org/  
 -WinSCP
-LinK de descarga <https://winscp.net/eng/download.php  
+LinK de descarga <https://winscp.net/eng/download.php    
+
 **Práctica de Shell y Linux**
 ## Acceso remoto a servidor POMEO mediante puTTy
-![Putty_](https://user-images.githubusercontent.com/84527758/125745896-699ca110-c473-4bd2-ba4d-5df3ead3978b.jpg)
+![Putty_](https://user-images.githubusercontent.com/84527758/125745896-699ca110-c473-4bd2-ba4d-5df3ead3978b.jpg)  
+
 ## Conectar a pomeo 
-![Conectar_pomeo](https://user-images.githubusercontent.com/84527758/125746007-0156110f-6692-4046-91c7-869b9c14f789.png)
+![Conectar_pomeo](https://user-images.githubusercontent.com/84527758/125746007-0156110f-6692-4046-91c7-869b9c14f789.png)  
+
 **Instalación y configuración software**
 ## Miniconda3
-Link: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash Miniconda3-latest-Linux-x86_64.sh
+Link: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh bash Miniconda3-latest-Linux-x86_64.sh  
+
 ### Instalación de conda
-![Instalación de conda](https://user-images.githubusercontent.com/84527758/125747077-65d542f0-b22e-499c-91cc-03a8c68c6e94.jpg)
+![Instalación de conda](https://user-images.githubusercontent.com/84527758/125747077-65d542f0-b22e-499c-91cc-03a8c68c6e94.jpg)  
+
 ### Configuración de conda 
-![configuración_conda](https://user-images.githubusercontent.com/84527758/125747317-81ccb096-a298-4ead-b1c0-9671ee9594b4.jpg)
+![configuración_conda](https://user-images.githubusercontent.com/84527758/125747317-81ccb096-a298-4ead-b1c0-9671ee9594b4.jpg)  
+
 ## Exploración de paquetes instalados
-![Revisión de paquetes instalado_miniconda](https://user-images.githubusercontent.com/84527758/125750602-a2f6428f-9dfd-4a75-8eeb-052e0deca409.jpg)
+![Revisión de paquetes instalado_miniconda](https://user-images.githubusercontent.com/84527758/125750602-a2f6428f-9dfd-4a75-8eeb-052e0deca409.jpg)  
+
 ## Creación de script con nano
-![creación de cript](https://user-images.githubusercontent.com/84527758/125747612-0e8cb0f3-f659-4f33-a72a-10b112b11bdb.jpg)
+![creación de cript](https://user-images.githubusercontent.com/84527758/125747612-0e8cb0f3-f659-4f33-a72a-10b112b11bdb.jpg)  
+
 ## Instalación de SRA Toolkit  
-![Instalar_sratoolkit](https://user-images.githubusercontent.com/84527758/125747863-3d063ed3-3e1a-487a-8d55-a7c25ebab148.jpg)
+![Instalar_sratoolkit](https://user-images.githubusercontent.com/84527758/125747863-3d063ed3-3e1a-487a-8d55-a7c25ebab148.jpg)  
+
 ## Exploración de paquetes instalados
-![Revisión de paquetes instalado2](https://user images.githubusercontent.com/84527758/125750653-3f730080-fe79-4648-8625-e8c151c57c1c.jpg)
+![Revisión de paquetes instalado2](https://user images.githubusercontent.com/84527758/125750653-3f730080-fe79-4648-8625-e8c151c57c1c.jpg)  
+
 **Descarga de secuencias NGS comprimidas en formato SRA
 Script: # !/bin/bash
 # Descarga y descomprime SRA Toolkit
-wget: http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current centos_linux64.tar.gz tar -xzf sratoolkit.current-centos_linux64.tar.gz
+wget: http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current centos_linux64.tar.gz tar -xzf sratoolkit.current-centos_linux64.tar.gz  
+
 **Configuración de sratoolkit
-![SRA_configuación](https://user-images.githubusercontent.com/84527758/125748746-be00181d-629f-4d31-9c3f-d4b2428c241f.jpg)  
+![SRA_configuación](https://user-images.githubusercontent.com/84527758/125748746-be00181d-629f-4d31-9c3f-d4b2428c241f.jpg)    
+
 **Descarga de las 5 primeras secuencias 
-![Mostrar las 5 primera secuencias](https://user-images.githubusercontent.com/84527758/125749145-af380fd1-0949-4a59-bba5-cca09d2eb163.jpg)
+![Mostrar las 5 primera secuencias](https://user-images.githubusercontent.com/84527758/125749145-af380fd1-0949-4a59-bba5-cca09d2eb163.jpg)  
+
 **Descarga de la biomuetra completa
-![Descargar la Biomuestra completa](https://user-images.githubusercontent.com/84527758/125749293-68471d0a-8fc3-403c-a7cd-1d156e043e0b.jpg)
+![Descargar la Biomuestra completa](https://user-images.githubusercontent.com/84527758/125749293-68471d0a-8fc3-403c-a7cd-1d156e043e0b.jpg)  
+
 ## Lista de comandos
 -Nombre del directorio en el que se encuentra  
 `pwd`  
