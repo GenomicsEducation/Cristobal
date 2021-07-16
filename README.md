@@ -192,21 +192,21 @@ rm -r tesis`
 |---------|---------|
 |Configurar|conda config --add channels bioconda|
 |buscar software en bioconda|conda search -c bioconda fast-qc , conda search -c bioconda fastqc , conda search -c bioconda trimmomatic|
-|Instalar|conda install -c bioconda fastqc, conda install -c bioconda trimmomatic|
+|Instalar|conda install -c bioconda fastqc, conda install -c bioconda trimmomatic|  
 
-![Configurar_bioconda](https://user-images.githubusercontent.com/84527758/125762234-140067e2-8a8a-45fe-bb1c-382a3fce9729.jpg)
+![Configurar_bioconda](https://user-images.githubusercontent.com/84527758/125762234-140067e2-8a8a-45fe-bb1c-382a3fce9729.jpg)  
 
-![Instalar_bioconda](https://user-images.githubusercontent.com/84527758/125762168-a940cb2b-12e7-44c0-892a-f37c8a886a4c.jpg)
+![Instalar_bioconda](https://user-images.githubusercontent.com/84527758/125762168-a940cb2b-12e7-44c0-892a-f37c8a886a4c.jpg)  
 
-![Instalar_bioconda_trimmomatic](https://user-images.githubusercontent.com/84527758/125762307-6cabe391-e14f-4766-a070-6a0292dae379.jpg)
+![Instalar_bioconda_trimmomatic](https://user-images.githubusercontent.com/84527758/125762307-6cabe391-e14f-4766-a070-6a0292dae379.jpg)  
 
-**Crear directorio SRA_samples
+**Crear directorio SRA_samples  
 
 `mkdir SRA_samples`  
 
 **Acceso al directorio  
 
-`cd SRA_samples`
+`cd SRA_samples`  
  
 **Creación de un archivo ejecutable (.sh)   
 
@@ -218,34 +218,38 @@ rm -r tesis`
  /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/prefetch --max-size 100G SRR2006763 -O /home2/usuario/SRA_samples/
  /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/vdb-validate /home2/usuario/SRA_samples/SRR2006763/SRR2006763.sra
 ```  
+
 **Correr el script 
 
 `bash download.sh` 
 
 **Enlistar  
 
-`ls -l -h`
+`ls -l -h`  
 
 **Creación de un script "nano fdump.sh"  
+
 ```
 #!/bin/bash
  #SBATCH - J fdump_usuario
  /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/fasterq-dump /home2/usuario/SRA_samples/SRR2006763/*.sra -O /home2/usuario/SRA_samples/SRR2006763/ 
  ```  
  
-![SRA_samples](https://user-images.githubusercontent.com/84527758/125961851-196088f8-b505-4c74-bad9-2d41de10e36a.jpg)
+![SRA_samples](https://user-images.githubusercontent.com/84527758/125961851-196088f8-b505-4c74-bad9-2d41de10e36a.jpg)  
 
 **Correr el script  
 
 `bash fdump.sh`
-![SRA_samples_contenido](https://user-images.githubusercontent.com/84527758/125962599-8f59a74e-9f39-41b3-ae11-a207b8c1e00b.jpg)
+![SRA_samples_contenido](https://user-images.githubusercontent.com/84527758/125962599-8f59a74e-9f39-41b3-ae11-a207b8c1e00b.jpg)  
 
-**Comprobación de integridad de archivos
-`md5sum SRR2006763_1.fastq SRR2006763_2.fastq > md5_samples`
-`cat md5_samples`
+**Comprobación de integridad de archivos  
+
+`md5sum SRR2006763_1.fastq SRR2006763_2.fastq > md5_samples`  
+`cat md5_samples`  
 `md5sum -c md5_samples`  
 
 **Análisis de control de calidad  
+
 ```  
 #!/bin/bash
   #SBATCH - J fastqc_usuario
