@@ -271,13 +271,22 @@ rm -r tesis`
 
 `plink --bfile EU_OC_US.FilteredPruned --keep EU_OC_US.FilteredPruned.rel.id --make-bed --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29`  
 
+![Remover](https://user-images.githubusercontent.com/84527758/125952632-d238ff97-927c-4dd4-b88a-47094df0755a.jpg)
+![Remover1](https://user-images.githubusercontent.com/84527758/125952635-18b6d05d-172b-4dc6-bbc2-1ce29ff1b903.jpg)
+
+
 **Análisis de PCA (Principal Component Analysis)  
 
 `plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29`  
 
 **Análisis de admixture
 
-`plink --bfile EU_OC_US.FilteredPrunedUnrel --thin 0.01 --make-bed --out EU_OC_US.Thinned --allow-extra-chr --chr-set 29`
+`plink --bfile EU_OC_US.FilteredPrunedUnrel --thin 0.01 --make-bed --out EU_OC_US.Thinned --allow-extra-chr --chr-set 29`  
+
+![Admixture_Img_1](https://user-images.githubusercontent.com/84527758/125952131-27e3f251-116c-4e82-841d-9cce2091f3e5.jpg)
+![Admixture_Img_2](https://user-images.githubusercontent.com/84527758/125952137-6d0a19c2-13d0-4e2e-8443-021bd1a5d14f.jpg)
+![Admixture_Img_3](https://user-images.githubusercontent.com/84527758/125952138-85f6466a-bd15-43b1-8cec-655dc172764b.jpg)
+
 
 **Análisis de ancestria de 2 a 6 poblaciones  
 
@@ -286,62 +295,107 @@ do
 admixture EU_OC_US.Thinned.bed $K;  
 done  
 
+![Filtrado_Img1](https://user-images.githubusercontent.com/84527758/125952237-b5ae5f25-b8a9-4d46-b63e-88e17ef5ef21.jpg)
+![Filtrado_Img2](https://user-images.githubusercontent.com/84527758/125952241-10461b0a-6b12-40ce-9a5f-3d1f58c80044.jpg)
+![Filtrar](https://user-images.githubusercontent.com/84527758/125952242-815f4b9d-5390-459e-9cfa-0f0644961a53.jpg)
+
+
+
+
 **Visualización con RStudio Cloud
 
 -Heterogocidad individual  
 
-`het <- read_delim("EU_OC_US.het",delim = "\t")`
-`het`
+```
+het <- read_delim("EU_OC_US.het",delim = "\t")
+het
+```
 
-`het$Heterozygosity <- 1-(het$`O(HOM)`/het$N_SITES)`   
-`het$Population <- c(rep("EU",3),rep("OC",3),rep("US",3))`  
-`A <- ggplot(het,aes(x = Population, y = Heterozygosity, col = Population)) +
+```
+het$Heterozygosity <- 1-(het$`O(HOM)`/het$N_SITES) 
+het$Population <- c(rep("EU",3),rep("OC",3),rep("US",3))
+A <- ggplot(het,aes(x = Population, y = Heterozygosity, col = Population)) +
   geom_point()+
   theme_bw()+
   theme(legend.position = "none")+
-  xlab("")`
-`A`  
+  xlab("")
+A
+``` 
 
-**Diversidad de nucleotidos
-`pi_EU <- read_delim("EU.windowed.pi",delim = "\t")`
-`pi_EU`
-`pi_OC <- read_delim("OC.windowed.pi",delim = "\t")`
-`pi_OC`
-`pi_US <- read_delim("US.windowed.pi",delim = "\t")`
-`pi_US`
+![Grafico_Heterogocidad](https://user-images.githubusercontent.com/84527758/125950588-13c1d397-5f75-4e4b-bc24-2bfa9e4b4d21.jpg)
 
-`pi_all <- bind_rows(pi_EU,pi_OC,pi_US)`
-`pi_all$Population<-c(rep("EU",nrow(pi_EU)),rep("OC",nrow(pi_OC)),rep("US",nrow(pi_US)))`
 
-`B <- ggplot(pi_all,aes(x = Population, y = PI, col = Population))+
+**Diversidad de nucleotidos  
+```
+pi_EU <- read_delim("EU.windowed.pi",delim = "\t")
+pi_EU
+```  
+
+```
+pi_OC <- read_delim("OC.windowed.pi",delim = "\t")
+pi_OC
+```  
+```
+pi_US <- read_delim("US.windowed.pi",delim = "\t")
+pi_US
+```  
+
+```
+pi_all <- bind_rows(pi_EU,pi_OC,pi_US)
+pi_all$Population<-c(rep("EU",nrow(pi_EU)),rep("OC",nrow(pi_OC)),rep("US",nrow(pi_US)))
+
+B <- ggplot(pi_all,aes(x = Population, y = PI, col = Population))+
       geom_jitter(col = "grey",width = 0.1)+ 
       geom_boxplot(notch = T, alpha = 0,outlier.shape = NA)+ 
       theme_bw()+
       theme(legend.position = "none")+
       xlab("")+
       ylab(expression(pi))
-`B`
+B
+```  
+![Grafico2_Heterogocidad](https://user-images.githubusercontent.com/84527758/125950511-52ea80e5-e1dc-463d-9213-9af7a220be51.png)
+
 
 **Desequilibrio de ligamiento  
-`ld <- read_csv("EU_OC_US.windowed.ld.csv")`
-`ld`
 
-`C <- ggplot(ld,aes(x = dist/1000, y = meanR2, col = pop)) +
+```
+ld <- read_csv("EU_OC_US.windowed.ld.csv")
+ld
+```  
+
+```
+C <- ggplot(ld,aes(x = dist/1000, y = meanR2, col = pop)) +
       geom_point()+
       geom_line()+
       theme_bw()+
       xlab("Distance (kb)")+
       ylab(expression(R^2))+
-      scale_colour_discrete(name = "Population")`
-`C`  
+      scale_colour_discrete(name = "Population")
+C
+```  
 
-**Gráficos de PCA
-`pca1 <- read_delim("EU_OC_US.FilteredPrunedUnrel.eigenvec", delim = " ",col_names = F)`  
-`head(pca1)`  
-`colnames(pca1) <- c("Population","Individual",paste0("PC",c(1:4)))`  
-`head(pca1)` 
+![Grafico_Desequilibrio de ligamiento](https://user-images.githubusercontent.com/84527758/125950410-ba030694-132c-4bd0-8ff5-f15f0bfb440c.jpg)  
 
-`mycols <- c("#a6cee3",
+
+**Gráfico de paneles múltiples**  
+
+![Grafico de paneles múltiples](https://user-images.githubusercontent.com/84527758/125950287-6b79f7c3-4654-4f5c-94c0-230310c390c4.jpg)
+
+
+**Gráficos de PCA  
+
+```
+pca1 <- read_delim("EU_OC_US.FilteredPrunedUnrel.eigenvec", delim = " ",col_names = F)
+    head(pca1)
+```  
+
+```
+colnames(pca1) <- c("Population","Individual",paste0("PC",c(1:4)))
+    head(pca1)
+```  
+
+```
+mycols <- c("#a6cee3",
               "#1f78b4",
               "#b2df8a",
               "#33a02c",
@@ -349,17 +403,46 @@ done
               "#e31a1c",
               "#fdbf6f",
               "#ff7f00",
-              "#cab2d6")`
+              "#cab2d6")
 
-`D <- ggplot(pca1,aes(x = PC1,y = PC2,col = Population))+
+    D <- ggplot(pca1,aes(x = PC1,y = PC2,col = Population))+
       geom_point()+
       theme_bw()+
-      scale_colour_manual(values = mycols)`
-`D`  
+      scale_colour_manual(values = mycols)
+    D
+```  
+![Grafico componente_principales](https://user-images.githubusercontent.com/84527758/125950211-d7f8b95b-1be7-4807-a923-4c9da3ec4d98.jpg)  
 
-**Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
 
 
+**Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones**  
+
+```
+library(readr)
+source("Admixture_plot.R")
+
+    pops <- read_delim("EU_OC_US.Thinned.fam", delim = " ",col_names = F)
+
+    K2 <- read_delim("EU_OC_US.Thinned.2.Q", delim = " ",col_names = F)
+    E <- admixtureplot(str_out = K2,k = 2, pops = pops, xaxis = F)
+    E
+```  
+![Graficos_ADMIXTURE](https://user-images.githubusercontent.com/84527758/125950125-60385afc-d0fd-4c74-a825-673afab66fda.jpg)  
+
+```
+ K4 <- read_delim("EU_OC_US.Thinned.4.Q", delim = " ", col_names = F)
+ G <- admixtureplot(str_out = K4,k = 4, pops = pops, xaxis = F)
+ G
+```    
+![Gráficos_ADMIXTURE2](https://user-images.githubusercontent.com/84527758/125950092-93cdcd03-cdaf-41b5-90ad-f546c3d0a454.jpg)  
+
+
+```
+K6 <- read_delim("EU_OC_US.Thinned.6.Q", delim = " ", col_names = F)
+H <- admixtureplot(str_out = K6,k = 6, pops = pops, xaxis = T)
+H
+```
+![Gráficos_ADMIXTURE3](https://user-images.githubusercontent.com/84527758/125950056-ee105fcd-4b72-4260-bcc8-aeca4456c347.png)  
 
 
 
