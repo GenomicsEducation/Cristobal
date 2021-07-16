@@ -8,8 +8,11 @@ https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei.
 **Assembly_ASM378908v1**
 ## Organism: ***Penaeus vannamei*** (Pacific white shrimp). 
 Infraspecific name: Breed: Kehai No.1. 
+
 Sex: male. 
+
 Submitter: Institute of Oceanology, Chinese Academy of Sciences. 
+
 Date: 2018/11/16. 
 Assembly level: Scaffold. 
 Genome representation: full. 
