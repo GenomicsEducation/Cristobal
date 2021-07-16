@@ -202,13 +202,55 @@ rm -r tesis`
 
 **Crear directorio SRA_samples
 
-![Creación de directorio_SRA samples](https://user-images.githubusercontent.com/84527758/125762494-872ac0c8-3a4a-4cde-b0ad-a1cbeafda880.jpg)  
+`mkdir SRA_samples`  
 
-**Crear un script   
+**Acceso al directorio  
 
-![Creación de script_nano_SRA samples__](https://user-images.githubusercontent.com/84527758/125763316-f93ae60a-2a2f-476b-a319-5ce197adaf62.jpg)
+`cd SRA_samples`
+ 
+**Creación de un archivo ejecutable (.sh)   
 
+`nano download.sh`  
 
+```
+#!/bin/bash
+ #SBATCH -J prefetch_usuario
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/prefetch --max-size 100G SRR2006763 -O /home2/usuario/SRA_samples/
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/vdb-validate /home2/usuario/SRA_samples/SRR2006763/SRR2006763.sra
+```  
+**Correr el script 
+
+`bash download.sh` 
+
+**Enlistar  
+
+`ls -l -h`
+
+**Creación de un script "nano fdump.sh"  
+```
+#!/bin/bash
+ #SBATCH - J fdump_usuario
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/fasterq-dump /home2/usuario/SRA_samples/SRR2006763/*.sra -O /home2/usuario/SRA_samples/SRR2006763/ 
+ ```  
+ 
+![SRA_samples](https://user-images.githubusercontent.com/84527758/125961851-196088f8-b505-4c74-bad9-2d41de10e36a.jpg)
+
+**Correr el script  
+
+`bash fdump.sh`
+![SRA_samples_contenido](https://user-images.githubusercontent.com/84527758/125962599-8f59a74e-9f39-41b3-ae11-a207b8c1e00b.jpg)
+
+**Comprobación de integridad de archivos
+`md5sum SRR2006763_1.fastq SRR2006763_2.fastq > md5_samples`
+`cat md5_samples`
+`md5sum -c md5_samples`  
+
+**Análisis de control de calidad  
+```  
+#!/bin/bash
+  #SBATCH - J fastqc_usuario
+  fastqc /home2/usuario/SRA_samples/SRR2006763/*.fastq
+  ```  
 
 
 # Practica_13_Población y ancestria
