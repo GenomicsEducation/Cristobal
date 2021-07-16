@@ -296,7 +296,45 @@ trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filter
 
 **Crear un directorio  
 
-`mkdir alineamiento`
+`mkdir alineamiento`  
+![Carpeta](https://user-images.githubusercontent.com/84527758/125976878-af0455ee-c48f-45c9-82dd-4caa95f6bb0e.jpg)  
+
+**Tranferiri archivos a carpeta alineamiento  
+
+`mv /home2/usuario/SRA_samples/SRR2006763/SRR2006763_1.fastq /home2/usuario/alineamiento/`  
+`mv /home2/usuario/SRA_samples/SRR2006763/SRR2006763_2.fastq /home2/usuario/alineamiento/`
+
+**Descarga genoma mitocondrial Bases de datos NCBI
+![Genoma_mitocondria](https://user-images.githubusercontent.com/84527758/125976304-d766ad80-ea50-4d3f-9b42-9a9b84a29aed.jpg)  
+![FASTA](https://user-images.githubusercontent.com/84527758/125976333-7e083019-d930-4c70-becf-d318142f259f.jpg)  
+
+**Indexación del genoma de referencia
+
+`bwa index mt.fasta`
+![Archivo_verificacion de datos](https://user-images.githubusercontent.com/84527758/125976482-28939f89-b66c-44a5-b2a1-3fc702e56a50.jpg)
+
+**Alineamiento de secuencias contra genoma mitocondrial  
+-Inspeccionar el archivo .sam de salida  
+-Ordenar lecturas alineadas por posición  
+-Indexación con Samtools  
+-Exploración de datos con Samtools   
+
+** Crear script denominado aln_mt.sh  
+
+`nano aln_mt.sh`  
+
+``` 
+#!/bin/bash -l  
+# para alinear tus dos secuencias fastq al genoma mitocondrial    
+bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam     
+# Transformar tu archivo sam a bam    
+samtools view -Sb -q 30 SRR2006763.sam > SRR2006763.bam      
+# ordenar tu archivo binario bam     
+samtools sort SRR2006763.bam -o SRR2006763.sort.bam       
+# indexar tu archivo bam     
+samtools index SRR2006763.sort.bam  
+``` 
+![Script_](https://user-images.githubusercontent.com/84527758/125977475-725aa4cf-fdb2-4343-b826-89ccf7c3ad8b.jpg)
 
 
 
