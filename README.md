@@ -289,8 +289,9 @@ trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filter
 
 **Efectuar un nuevo análisis de calidad de las muestras  
 
-`fastqc *.fastq.gz`
-![Descomprimir documentos](https://user-images.githubusercontent.com/84527758/125968143-daa58007-4c45-49d3-a4df-5cc0660933f7.jpg)
+`fastqc *.fastq.gz`  
+
+![Descomprimir documentos](https://user-images.githubusercontent.com/84527758/125968143-daa58007-4c45-49d3-a4df-5cc0660933f7.jpg)  
 
 # Alineamiento  
 
