@@ -217,55 +217,55 @@ rm -r tesis`
 ### Objetivo
 -Realizar un analisis de genomica poblacional y ancestria en Salmo salar a partir de archivo de variantes VCF  
 ### Actividades:  
-**Conectar al servidor POMEO  
+**Conectar al servidor POMEO   
 ![Putty_p13](https://user-images.githubusercontent.com/84527758/125852845-8bf6b019-eccb-467e-8a0e-ef921f31f52e.jpg)
 
 **Configurar bioconda  
-`conda config --add channels bioconda`   
+`conda config --add channels bioconda`     
 
 **Instalar los software plink  
-`cconda install -c bioconda plink`  
+`cconda install -c bioconda plink`    
 
 ## Instalar admixture  
-`conda install -c bioconda admixture`
+`conda install -c bioconda admixture`   
 ![Instalar_bioconda_plink](https://user-images.githubusercontent.com/84527758/125855463-0bf3ff17-a713-449d-92c9-1d63a68a0917.jpg)
 
-## Crear direcotio de trabajo "population"
-`cd population` 
-`ls -l -h`  
+## Crear direcotio de trabajo "population"  
+`cd population`  
+`ls -l -h`    
 ![Chequeo de datos](https://user-images.githubusercontent.com/84527758/125871329-7b85eca3-3ad8-4ecc-9ded-f0e359af8711.jpg)
 
-## Analsis de diversidad
-`vcftools --vcf EU_OC_US.vcf --het --out EU_OC_US`  
-`vcftools --vcf EU_OC_US.vcf --hardy --out EU_OC_US`  
+## Analsis de diversidad  
+`vcftools --vcf EU_OC_US.vcf --het --out EU_OC_US`   
+`vcftools --vcf EU_OC_US.vcf --hardy --out EU_OC_US`   
 
 ## Calcular la diversidad en una ventana no superpuesta de 200 kb para cada individuo de las tres poblaciones  
 
-### Para la poblacion de Europa
+### Para la poblacion de Europa  
 `vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv 2_WG0341511-DNA_A02_5408 --indv 3_WG0341511-DNA_A03_5416 --indv 5_WG0341511-DNA_A05_5450 --out EU`  
 
-## Para la poblacion de Oceania
+## Para la poblacion de Oceania  
 `vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv FR07958834 --indv FR07958842 --indv FR07958850 --out OC`
 
-## Para la poblacion de Norteamerica
+## Para la poblacion de Norteamerica  
 `vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US`
 
-![Analisis_diversidad](https://user-images.githubusercontent.com/84527758/125871406-7875c8ed-547d-4c1b-8dd2-29c35824c655.jpg)
-![Analisis_diversidad_EU_OC](https://user-images.githubusercontent.com/84527758/125871409-67e394a1-6234-4352-884d-496f58c2625f.jpg)
-![Analisis_diversidad_US](https://user-images.githubusercontent.com/84527758/125871410-954e6b24-1ffe-4a4c-a281-3ad190b4675d.jpg)
+![Analisis_diversidad](https://user-images.githubusercontent.com/84527758/125871406-7875c8ed-547d-4c1b-8dd2-29c35824c655.jpg)  
+![Analisis_diversidad_EU_OC](https://user-images.githubusercontent.com/84527758/125871409-67e394a1-6234-4352-884d-496f58c2625f.jpg)  
+![Analisis_diversidad_US](https://user-images.githubusercontent.com/84527758/125871410-954e6b24-1ffe-4a4c-a281-3ad190b4675d.jpg)  
 
 ## Calcular el desequilibrio de ligamiento (LD) para las tres poblaciones
 
-**Población de Europa
-`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv 2_WG0341511-DNA_A02_5408 --indv 3_WG0341511-DNA_A03_5416 --indv 5_WG0341511-DNA_A05_5450 --out EU`
+**Población de Europa  
+`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv 2_WG0341511-DNA_A02_5408 --indv 3_WG0341511-DNA_A03_5416 --indv 5_WG0341511-DNA_A05_5450 --out EU`  
 
-**Población Oceania
-`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv FR07958834 --indv FR07958842 --indv FR07958850 --out OC`
+**Población Oceania  
+`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv FR07958834 --indv FR07958842 --indv FR07958850 --out OC`  
 
-**Poblacion de Norteamerica
-`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US`
+**Poblacion de Norteamerica  
+`vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US`  
 
-![Deshequilibrio_](https://user-images.githubusercontent.com/84527758/125881111-e9e466bf-ffcb-4bc5-b320-9b855326952e.jpg)
+![Deshequilibrio_](https://user-images.githubusercontent.com/84527758/125881111-e9e466bf-ffcb-4bc5-b320-9b855326952e.jpg)  
 
 
 # Practica_14_Introduccion a los estudios de asociación genómica  
