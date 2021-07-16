@@ -209,11 +209,9 @@ rm -r tesis`
 ![Creación de script_nano_SRA samples__](https://user-images.githubusercontent.com/84527758/125763316-f93ae60a-2a2f-476b-a319-5ce197adaf62.jpg)
 
 
-# Practica_12
-### Objetivo
 
 
-# Practica_13
+# Practica_13_Población y ancestria
 ### Objetivo
 -Realizar un analisis de genomica poblacional y ancestria en Salmo salar a partir de archivo de variantes VCF  
 ### Actividades:  
@@ -266,6 +264,103 @@ rm -r tesis`
 `vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US`  
 
 ![Deshequilibrio_](https://user-images.githubusercontent.com/84527758/125881111-e9e466bf-ffcb-4bc5-b320-9b855326952e.jpg)  
+
+**Filtrar para remover individuos relacionados  
+
+`plink --bfile EU_OC_US.FilteredPruned --rel-cutoff 0.4 --out EU_OC_US.FilteredPruned --allow-extra-chr --chr-set 29`
+
+`plink --bfile EU_OC_US.FilteredPruned --keep EU_OC_US.FilteredPruned.rel.id --make-bed --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29`  
+
+**Análisis de PCA (Principal Component Analysis)  
+
+`plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29`  
+
+**Análisis de admixture
+
+`plink --bfile EU_OC_US.FilteredPrunedUnrel --thin 0.01 --make-bed --out EU_OC_US.Thinned --allow-extra-chr --chr-set 29`
+
+**Análisis de ancestria de 2 a 6 poblaciones  
+
+for K in `seq 2 6`;  
+do  
+admixture EU_OC_US.Thinned.bed $K;  
+done  
+
+**Visualización con RStudio Cloud
+
+-Heterogocidad individual  
+
+`het <- read_delim("EU_OC_US.het",delim = "\t")`
+`het`
+
+`het$Heterozygosity <- 1-(het$`O(HOM)`/het$N_SITES)`   
+`het$Population <- c(rep("EU",3),rep("OC",3),rep("US",3))`  
+`A <- ggplot(het,aes(x = Population, y = Heterozygosity, col = Population)) +
+  geom_point()+
+  theme_bw()+
+  theme(legend.position = "none")+
+  xlab("")`
+`A`  
+
+**Diversidad de nucleotidos
+`pi_EU <- read_delim("EU.windowed.pi",delim = "\t")`
+`pi_EU`
+`pi_OC <- read_delim("OC.windowed.pi",delim = "\t")`
+`pi_OC`
+`pi_US <- read_delim("US.windowed.pi",delim = "\t")`
+`pi_US`
+
+`pi_all <- bind_rows(pi_EU,pi_OC,pi_US)`
+`pi_all$Population<-c(rep("EU",nrow(pi_EU)),rep("OC",nrow(pi_OC)),rep("US",nrow(pi_US)))`
+
+`B <- ggplot(pi_all,aes(x = Population, y = PI, col = Population))+
+      geom_jitter(col = "grey",width = 0.1)+ 
+      geom_boxplot(notch = T, alpha = 0,outlier.shape = NA)+ 
+      theme_bw()+
+      theme(legend.position = "none")+
+      xlab("")+
+      ylab(expression(pi))
+`B`
+
+**Desequilibrio de ligamiento  
+`ld <- read_csv("EU_OC_US.windowed.ld.csv")`
+`ld`
+
+`C <- ggplot(ld,aes(x = dist/1000, y = meanR2, col = pop)) +
+      geom_point()+
+      geom_line()+
+      theme_bw()+
+      xlab("Distance (kb)")+
+      ylab(expression(R^2))+
+      scale_colour_discrete(name = "Population")`
+`C`  
+
+**Gráficos de PCA
+`pca1 <- read_delim("EU_OC_US.FilteredPrunedUnrel.eigenvec", delim = " ",col_names = F)`  
+`head(pca1)`  
+`colnames(pca1) <- c("Population","Individual",paste0("PC",c(1:4)))`  
+`head(pca1)` 
+
+`mycols <- c("#a6cee3",
+              "#1f78b4",
+              "#b2df8a",
+              "#33a02c",
+              "#fb9a99",
+              "#e31a1c",
+              "#fdbf6f",
+              "#ff7f00",
+              "#cab2d6")`
+
+`D <- ggplot(pca1,aes(x = PC1,y = PC2,col = Population))+
+      geom_point()+
+      theme_bw()+
+      scale_colour_manual(values = mycols)`
+`D`  
+
+**Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
+
+
+
 
 
 # Practica_14_Introduccion a los estudios de asociación genómica  
