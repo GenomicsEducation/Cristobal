@@ -1,7 +1,9 @@
-# Título: Práctica elaboración de un proyecto de genómica aplicada.
-## Autor: Cristóbal Domínguez, Ecuador, Biólogo Marino.
+# Título
+Práctica elaboración de un proyecto de genómica aplicada.
+## Autor
+Cristóbal Domínguez, Ecuador, Biólogo Marino.
 ### Descripción: Proyecto_genomica_Penaeus vannamei
-### <https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei
+https://www.ncbi.nlm.nih.gov/assembly/?term=Penaeus+vannamei
 **Assembly_ASM378908v1**
 ## Organism: ***Penaeus vannamei*** (Pacific white shrimp)
 ### Infraspecific name: Breed: Kehai No.1
@@ -23,7 +25,7 @@
 ### IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]
 
 ## Global statistics
-|Columna 1|Columna 2|
+|Item|Nº|
 |---------|---------|
 |Total sequence length| 1,663,581,301|
 |Total ungapped length|	1,618,053,608|
@@ -38,7 +40,7 @@
 |Number of component sequences (WGS or clone)|	4,683|
 
 # BIOPROYECTO
-### <https://www.ncbi.nlm.nih.gov/sra?term=SRP319658
+https://www.ncbi.nlm.nih.gov/sra?term=SRP319658
 ## SRX10866775: 16S rRNA of gut microbiota
 ### 1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads
 ### Submitted by: Guangdong Ocean University
@@ -49,14 +51,13 @@
 ### Selection: PCR
 ### Layout: PAIRED 
 
-## Runs: 1 run, 133,094 spots, 64.9M bases, 23.2Mb
-|Columna 1|Columna 2|Columna 3|Columna 4|Columna 5|
+## Runs: 1 run
+|Run|# of Spots|# of Bases|Size|Published|
 |---------|---------|---------|---------|---------|
-|Run|	# of Spots|	# of Bases|	Size	Published|
 |SRR14521329|	133,094| 64.9M|	23.2Mb|	2021-05-15|
 
 ## **Numero de muestra del Bioproyecto_PRJNA729583**
-### <https://www.ncbi.nlm.nih.gov/sra/SRX10866775[accn]
+<https://www.ncbi.nlm.nih.gov/sra/SRX10866775[accn]
 1. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads Accession: SRX10866775
 2. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 120,032 spots, 58.6M bases, 21.1Mb downloads Accession: SRX10866774
 3. 16S rRNA of gut microbiota: (Illumina NovaSeq 6000) run: 135,905 spots, 66.3M bases, 24Mb downloads Accession: SRX10866773
@@ -76,7 +77,7 @@
 ![Proyecto_git_Rstudio](https://user-images.githubusercontent.com/84527758/125744304-323664d1-6ef1-48ff-9cfd-bf53dd13e3c1.jpg)
   
   
-# Práctica_9_introducción a Linux para genomica 
+# Práctica_9_introducción a Linux para genómica 
 **Instalación y configuración de software**
 ### Ventajas de usar Shell: conectividad y acceso remoto: El uso de Shell facilita la conectividad y el acceso remoto a recursos computacionales desde cualquier parte del mundo.
 -PuTTy
@@ -339,7 +340,7 @@ samtools index SRR2006763.sort.bam
 
 
 
-# Practica_13_Población y ancestria
+# Practica_13_Población y ancestría
 ### Objetivo
 -Realizar un analisis de genomica poblacional y ancestria en Salmo salar a partir de archivo de variantes VCF  
 ### Actividades:  
