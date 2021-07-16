@@ -249,12 +249,55 @@ rm -r tesis`
 `md5sum -c md5_samples`  
 
 **Análisis de control de calidad  
+`nano fastqc.sh`  
+
+** Creación de script 
 
 ```  
 #!/bin/bash
   #SBATCH - J fastqc_usuario
   fastqc /home2/usuario/SRA_samples/SRR2006763/*.fastq
   ```  
+![Script_](https://user-images.githubusercontent.com/84527758/125966441-afd67e47-c37a-4029-a5bd-f8fff741ee31.jpg)
+
+**Como resultado se generan 2 archivos  
+
+1. Archivo HTML  
+2. Archivo .zip  
+
+**Filtrado y poda
+`nano trimm.sh`  
+
+**Guardar la información del script  
+
+``` 
+#!/bin/bash
+#SBATCH - J trimm_usuario
+trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filtered.fastq.gz SLIDINGWINDOW:5:25 MINLEN:60
+``` 
+
+** Se obtiene 4 archivos comprimidos:  
+
+1. SRR20067634_filtered_1P.fastq.gz
+2. SRR20067634_filtered_1U.fastq.gz
+3. SRR20067634_filtered_2P.fastq.gz
+4. SRR20067634_filtered_2U.fastq.gz
+
+**Descomprimir los archivos
+`gunzip SRR20067634_filtered_1P.fastq.gz`  
+
+
+**Efectuar un nuevo análisis de calidad de las muestras  
+
+`fastqc *.fastq.gz`
+![Descomprimir documentos](https://user-images.githubusercontent.com/84527758/125968143-daa58007-4c45-49d3-a4df-5cc0660933f7.jpg)
+
+# Alineamiento  
+
+**Crear un directorio  
+
+`mkdir alineamiento`
+
 
 
 # Practica_13_Población y ancestria
