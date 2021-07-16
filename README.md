@@ -13,19 +13,32 @@ Sex: male.
 
 Submitter: Institute of Oceanology, Chinese Academy of Sciences. 
 
-Date: 2018/11/16. 
+Date: 2018/11/16.  
+
 Assembly level: Scaffold. 
+
 Genome representation: full. 
+
 RefSeq category: representative genome. 
+
 GenBank assembly accession: GCA_003789085.1 (latest). 
+
 RefSeq assembly accession: GCF_003789085.1 (latest). 
+
 IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]. 
+
 SRX10866775: 16S rRNA of gut microbiota  
+
 1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads. 
+
 WGS Project: QCYY01Assembly   
+
 method: WTDBG v. 1.2Expected final version: yes. 
+
 Genome coverage: 84.0x. 
+
 Sequencing technology: PacBio; Illumina HiSeq. 
+
 IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq]. 
 
 ## Global statistics
@@ -46,14 +59,23 @@ IDs: 2106361 [UID] 7871408 [GenBank] 8054448 [RefSeq].
 # BIOPROYECTO
 https://www.ncbi.nlm.nih.gov/sra?term=SRP319658. 
 SRX10866775: 16S rRNA of gut microbiota. 
+
 1 ILLUMINA (Illumina NovaSeq 6000) run: 133,094 spots, 64.9M bases, 23.2Mb downloads. 
+
 Submitted by: Guangdong Ocean University. 
+
 Study: Pacific white shrimp 16S rDNA. 
+
 PRJNA729583 • SRP319658 • All experiments • All runs. 
+
 Sample: SAMN19136062 • SRS8961620 • All experiments • All runs. 
+
 Source: GENOMIC. 
+
 Selection: PCR. 
+
 Layout: PAIRED    
+
 
 ## Runs: 1 run
 |Run|# of Spots|# of Bases|Size|Published|
